@@ -5,6 +5,11 @@ const moviesApi = '/movies';
 const movieTicketsApi = '/tickets';
 
 export const MovieRepository = {
+  getMovieById: async (movieId) => {
+    const res = await axios.get(`${urlBackend}${moviesApi}/${movieId}`);
+    return res.data;
+  },
+
   fetchMovies: async () => {
     const res = await axios.get(`${urlBackend}${moviesApi}`);
     return res.data;

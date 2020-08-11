@@ -1,7 +1,7 @@
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 import React, { Component } from 'react';
-import { MovieRepository } from '../core/api/movie-repository';
-import MovieItem from '../components/movie-item';
+import { MovieRepository } from '../../core/api/movie-repository';
+import MovieItem from '../../components/movie-item';
 import { Container } from '@material-ui/core';
 
 export default class Movies extends Component {

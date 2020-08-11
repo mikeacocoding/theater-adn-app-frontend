@@ -4,4 +4,13 @@
 
 .datacontainer{
     padding:5px;
+    display:flex;
+}
+
+.datacontainer img{
+    width: 200px;
+}
+
+.infocontainer {
+    margin-left:20px;
 }
