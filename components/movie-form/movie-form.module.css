@@ -1,0 +1,43 @@
+.container {
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.infocontainer {
+  padding: 20px;
+  margin: 0px;
+}
+
+.buttoncontainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.inputdatacontainer {
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pricecontainer {
+  font-weight: bold;
+  padding: 25px;
+}
+
+.priceinfo {
+  margin: 0px;
+}
+
+.ticketcontainer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #4caf50;
+  border-radius: 0px 0px 4px 4px;
+  color: #023504;
+}

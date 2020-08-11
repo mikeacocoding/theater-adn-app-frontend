@@ -1,12 +1,14 @@
 import Layout from '../../components/layout';
 import { MovieRepository } from '../../core/api/movie-repository';
+import MovieInfo from '../../components/movie-info/movie-info';
+import MovieForm from '../../components/movie-form/movie-form';
 
 const MovieTicketInfo = (props) => {
   const movie = props.movie;
   return (
     <Layout>
-      <h1>Mostrando movie: {movie.title}</h1>
-      <p>{movie.description}</p>
+      <MovieInfo movie={movie}></MovieInfo>
+      <MovieForm movie={movie}></MovieForm>
     </Layout>
   );
 };

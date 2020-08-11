@@ -15,7 +15,20 @@ export const MovieRepository = {
     return res.data;
   },
 
-  fetchMovieTickets: () => {
-    return axios.get(`${urlBackend}${movieTicketsApi}`);
+  fetchMovieTickets: async () => {
+    const res = await axios.get(`${urlBackend}${movieTicketsApi}`);
+    return res.data;
   },
+
+  calculateMovieTicketCost: async (date, movie) => {
+    const res = await axios.post(`${urlBackend}${movieTicketsApi}/cost`,{
+      date,
+      movie
+    });
+    return res.data.value;
+  },
+
+  buyMovieTicket: (date, movie) => {
+    return Math.floor(Math.random() * (Math.pow(10,9)));
+  }
 };

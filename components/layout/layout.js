@@ -10,6 +10,7 @@ export default function Layout({ children }) {
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Learn how to build a personal website using Next.js' />
         <meta name='og:title' content={title} />
+        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
         <title>{title}</title>
       </Head>
       <Nav></Nav>

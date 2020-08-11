@@ -7,11 +7,14 @@ export default function Nav() {
       <div className={styles.titlecontainer}>
         <Link href='/'>
           <a>
-            <img src='/logo-ceiba.png'></img>
+            <img height='60px' src='/ceiba.png'></img>
           </a>
         </Link>
         <Link href='/'>
-            <h1>Theater Adn Ceiba App</h1>
+          <div>
+            <h3 className={styles.text} >Theater Adn Ceiba App</h3>
+            <h4 className={`${styles.text} ${styles.subtitle}`} >Project for educative purposes</h4>
+          </div>
         </Link>
       </div>
     </div>

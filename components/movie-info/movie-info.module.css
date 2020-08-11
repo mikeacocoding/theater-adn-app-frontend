@@ -1,0 +1,15 @@
+.container {
+  margin-top: 50px;
+}
+
+.infocontainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infocontainer img {
+  max-width: 600px;
+  width: -webkit-fill-available;
+}

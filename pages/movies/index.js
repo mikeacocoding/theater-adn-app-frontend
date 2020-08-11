@@ -11,7 +11,6 @@ export default class Movies extends Component {
   }
   async componentDidMount() {
     const data = await MovieRepository.fetchMovies();
-    console.log(data);
     this.setState({
       data,
     });
