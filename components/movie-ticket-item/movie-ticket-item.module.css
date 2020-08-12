@@ -1,0 +1,26 @@
+.movieticketitemcontainer {
+  display: flex;
+  margin: 10px;
+}
+
+.movieticketitemcontainer img {
+  width: 100px;
+  padding: 10px;
+}
+
+.movieticketitemcontainer h1,
+.movieticketitemcontainer h5 {
+  margin: 0px;
+}
+
+.textcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtextcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
