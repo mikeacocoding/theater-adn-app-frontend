@@ -5,7 +5,7 @@ import moment from 'moment';
 function MovieTicketItem({ movieTicket }) {
    
   const formatTicketDate = () => {
-    return moment(movieTicket.date).format('yyyy/MM/DD hh:mm a');
+    return moment(movieTicket.date).format('YYYY/MM/DD hh:mm a');
   }  
     
   return (
