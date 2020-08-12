@@ -1,23 +1,34 @@
 import Layout from '../../components/layout';
-import { MovieRepository } from '../../core/api/movie-repository';
 import MovieInfo from '../../components/movie-info/movie-info';
 import MovieForm from '../../components/movie-form/movie-form';
+import { getMovieById } from '../../redux/actions/movieActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-const MovieTicketInfo = (props) => {
-  const movie = props.movie;
+const MovieTicketInfo = ({ movieId }) => {
+  const dispatch = useDispatch();
+  const { movie } = useSelector((state) => state.movies);
+
+  useEffect(() => {
+    dispatch(getMovieById(movieId));
+  }, [dispatch]);
+
   return (
     <Layout>
-      <MovieInfo movie={movie}></MovieInfo>
-      <MovieForm movie={movie}></MovieForm>
+      {movie && (
+        <>
+          <MovieInfo movie={movie}></MovieInfo>
+          <MovieForm movie={movie}></MovieForm>
+        </>
+      )}
     </Layout>
   );
 };
 
 export async function getServerSideProps({ params }) {
-  const movie = await MovieRepository.getMovieById(params.movieId);
   return {
     props: {
-      movie,
+      movieId: params.movieId,
     },
   };
 }

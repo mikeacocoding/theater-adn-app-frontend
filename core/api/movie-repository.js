@@ -46,4 +46,9 @@ export const MovieRepository = {
       return new Error('Ha ocurrido un error');
     }
   },
+
+  deleteMovieTicket: async (movieTicketId) => {
+    const res = await axios.delete(`${urlBackend}${movieTicketsApi}/${movieTicketId}`);
+    return res.data;
+  }
 };

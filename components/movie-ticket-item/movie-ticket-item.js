@@ -1,13 +1,16 @@
-import { Container, Paper } from '@material-ui/core';
+import { Container, Paper, Button } from '@material-ui/core';
 import styles from './movie-ticket-item.module.css';
 import moment from 'moment';
 
-function MovieTicketItem({ movieTicket }) {
-   
+function MovieTicketItem({ movieTicket, onDeleteTicket }) {
   const formatTicketDate = () => {
     return moment(movieTicket.date).format('YYYY/MM/DD hh:mm a');
-  }  
-    
+  };
+
+  const handleDeleteTicket = () => {
+    onDeleteTicket(movieTicket.ticketId);
+  };
+
   return (
     <div>
       <Container>
@@ -26,6 +29,11 @@ function MovieTicketItem({ movieTicket }) {
               <div className={styles.subtextcontainer}>
                 <h5>Precio</h5>
                 <h1>{movieTicket.value}</h1>
+              </div>
+              <div className={styles.subtextcontainer}>
+                <Button size='large' variant='contained' color='secondary' onClick={handleDeleteTicket}>
+                  Eliminar
+                </Button>
               </div>
             </div>
           </div>

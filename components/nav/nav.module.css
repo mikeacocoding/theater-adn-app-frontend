@@ -6,6 +6,7 @@
   position: sticky;
   top: 1px;
   color: #4caf50;
+  z-index: 1000;
 }
 
 .titlecontainer {
@@ -13,17 +14,17 @@
   align-items: center;
 }
 
-.titlecontainer.text{
+.titlecontainer.text {
   margin-left: 20px;
   font-size: 1.5em;
   cursor: pointer;
 }
 
-.text{
-  margin:0px;
+.text {
+  margin: 0px;
   margin-left: 15px;
 }
 
-.subtitle{
+.subtitle {
   font-weight: 100;
 }
