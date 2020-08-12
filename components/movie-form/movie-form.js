@@ -62,7 +62,7 @@ const MovieForm = ({ movie }) => {
               />
               <div className={`paper ${styles.pricecontainer}`}>
                 <h5 className={styles.priceinfo}>Total:</h5>
-                <h1 className={styles.priceinfo}>{total}</h1>
+                <h1 className={styles.priceinfo}>{total ? total : movie.price}</h1>
               </div>
             </Paper>
           </Grid>
