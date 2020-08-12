@@ -11,6 +11,7 @@ const MovieForm = ({ movie }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [total, setTotal] = useState(movie.price);
   const [ticketId, setTicketId] = useState(null);
+  const [ticketError, setTicketError] = useState(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -22,10 +23,15 @@ const MovieForm = ({ movie }) => {
     setTotal(newTotal);
   };
 
-  const handleBuyTicket = () => {
-    console.log(`Comprando ticket por ${total}`);
-    const newTicketId = MovieRepository.buyMovieTicket(selectedDate, movie);
-    setTicketId(newTicketId);
+  const handleBuyTicket = async () => {
+    let movieTicket = null;
+    try {
+      movieTicket = await MovieRepository.buyMovieTicket(moment(selectedDate).format(), total, movie);
+      setTicketId(movieTicket.ticketId);
+      setTicketError(null);
+    } catch (error) {
+      setTicketError(error.message);
+    }
   };
 
   return (
@@ -72,6 +78,7 @@ const MovieForm = ({ movie }) => {
             <p>Guarda este número ya que te será solicitado al ingresar a la sala, puedes comprar más tickets si lo deseas.</p>
           </div>
         )}
+        {ticketError && <div className={styles.errorcontainer}>Ha ocurrido un error: {ticketError}</div>}
       </div>
     </Container>
   );

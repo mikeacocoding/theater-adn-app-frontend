@@ -21,14 +21,29 @@ export const MovieRepository = {
   },
 
   calculateMovieTicketCost: async (date, movie) => {
-    const res = await axios.post(`${urlBackend}${movieTicketsApi}/cost`,{
+    const res = await axios.post(`${urlBackend}${movieTicketsApi}/cost`, {
       date,
-      movie
+      movie,
     });
     return res.data.value;
   },
 
-  buyMovieTicket: (date, movie) => {
-    return Math.floor(Math.random() * (Math.pow(10,9)));
-  }
+  buyMovieTicket: async (date, value, movie) => {
+    try {
+      const res = await axios.post(`${urlBackend}${movieTicketsApi}`, {
+        date,
+        value,
+        movie,
+      });
+      return res.data;
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data);
+        throw new Error(error.response.data.message);
+      } else if (error.request) {
+        console.log(error.request);
+      }  
+      return new Error('Ha ocurrido un error');
+    }
+  },
 };

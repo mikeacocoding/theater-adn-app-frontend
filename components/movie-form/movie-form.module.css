@@ -41,3 +41,10 @@
   border-radius: 0px 0px 4px 4px;
   color: #023504;
 }
+
+.errorcontainer {
+  background: #f44336;
+  color: white;
+  padding: 5px;
+  border-radius: 0px 0px 4px 4px;
+}
