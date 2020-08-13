@@ -1,19 +1,39 @@
-import styles from './content-buttons.module.css';
-import Link from 'next/link';
-import Button from '@material-ui/core/Button';
+import styles from "./content-buttons.module.css";
+import Link from "next/link";
+import {
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
 
 const ContentButtons = () => (
   <div className={styles.container}>
-    <Link href='/movies'>
-      <Button size="large" variant='contained' color='primary'>
-        Movies
-      </Button>
-    </Link>
-    <Link href='/movietickets'>
-      <Button size="large" variant='outlined' color='primary'>
-        Movie Tickets
-      </Button>
-    </Link>
+    <Card>
+      <Link href="/movies">
+        <CardActionArea>
+          <CardMedia component="img" image="./movies-home.png" />
+          <CardContent className={styles.content}>
+            <Typography variant="h4">
+              Movies
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
+    </Card>
+    <Card>
+      <Link href="/movietickets">
+        <CardActionArea>
+          <CardMedia component="img" image="./tickets-home.png" />
+          <CardContent className={styles.content}>
+            <Typography variant="h4">
+              MovieTickets
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
+    </Card>
   </div>
 );
 
