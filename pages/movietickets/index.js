@@ -1,5 +1,5 @@
 import Layout from '../../components/layout';
-import { Container, Button } from '@material-ui/core';
+import { Container, Button, Typography } from '@material-ui/core';
 import MovieTicketItem from '../../components/movie-ticket-item/movie-ticket-item';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovieTickets } from '../../redux/actions/movieTicketActions';
@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Swal from 'sweetalert2';
 import { MovieRepository } from '../../core/api/movie-repository';
+import BackButton from '../../components/back-button';
 
 const MovieTickets = () => {
   const dispatch = useDispatch();
@@ -35,8 +36,13 @@ const MovieTickets = () => {
   return (
     <Layout>
       <Container>
-        <h1>Movie Tickets</h1>
-        <div>Tickets generados: ({movieTickets ? movieTickets.length : '0'})</div>
+        <BackButton url='/'></BackButton>
+        <Typography color='primary' variant='h2'>
+          Movie Tickets
+        </Typography>
+        <Typography color='primary' variant='h5'>
+          Tickets generados: ({movieTickets ? movieTickets.length : '0'})
+        </Typography>
         <Button size='large' variant='contained' color='primary' onClick={handleRefreshClick}>
           Refresh
         </Button>

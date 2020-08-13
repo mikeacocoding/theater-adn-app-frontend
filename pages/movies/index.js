@@ -1,10 +1,11 @@
 import Layout from '../../components/layout';
 import MovieItem from '../../components/movie-item';
-import { Container, Button } from '@material-ui/core';
+import { Container, Button, Typography } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchMovies } from '../../redux/actions/movieActions';
 import Skeleton from '@material-ui/lab/Skeleton';
+import BackButton from '../../components/back-button';
 
 function Movies() {
   const dispatch = useDispatch();
@@ -21,7 +22,10 @@ function Movies() {
   return (
     <Layout>
       <Container>
-        <h1>Movies</h1>
+        <BackButton url='/' ></BackButton>
+        <Typography color='primary' variant='h2'>
+          Movies
+        </Typography>
         <Button size='large' variant='contained' color='primary' onClick={handleRefreshClick}>
           Refresh
         </Button>
